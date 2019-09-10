@@ -1,0 +1,48 @@
+<div class = "card-body md-6">
+  <div class="card-header">
+          Ingresar Curso
+        </div>
+        <div class="card-body center md-6">
+          <form [formGroup]="CursosForm" (ngSubmit)="AgregarCurso()" >
+            <div class="form-group">
+              <label for="Nombre">Nombre :</label>
+              <input type="text" class="form-control" id="name" aria-describedby="name"
+                formControlName="name"
+                >
+              
+            </div>
+            <button type="submit" class="btn btn-primary" >Agregar</button>
+          </form>
+      </div>
+      <div class="card-header">
+          Ingresar Id Curso
+        </div>
+        <div class="card-body center md-6">
+          <form [formGroup]="CursosForm" (ngSubmit)="BorrarCurso(id)" >
+            <div class="form-group">
+              <label for="Nombre">ID:</label>
+              <input type="text" class="form-control" id="id" aria-describedby="id"
+                formControlName="id"
+                >
+              
+            </div>
+            <button type="submit" class="btn btn-primary" >Eliminar</button>
+          </form>
+      </div>
+    </div>
+
+<div class = "card-body md-6">
+    <h4>Resultados de Todos los cursos</h4>
+  <table  mat-table *ngFor="let course of course$.payload" class="table">
+    
+      <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name course </th>
+      </tr>
+        <tr>
+            <td>{{course.id}}</td>
+            <td>{{course.name}}</td>
+        </tr>
+</table></div>
+
+
